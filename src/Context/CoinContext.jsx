@@ -29,7 +29,7 @@ const CoinContextProvider = (props) => {
         console.log("Failed to fetch data");
       }
       const data = await response.json();
-      console.log(data);
+      setAllCoin(data);
     } catch (err) {
       console.log("Error fetching coin data:", err);
     }

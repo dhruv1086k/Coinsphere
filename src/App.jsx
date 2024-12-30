@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Coin from "./Pages/Coin/Coin";
 import Navbar from "./components/navbar/Navbar";
+import "./index.css";
 
 export default function App() {
   return (

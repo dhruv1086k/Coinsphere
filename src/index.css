@@ -80,3 +80,18 @@ input::placeholder {
   right: 15%;
   width: 100px;
 }
+.table-layout {
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+}
+
+@media only screen and (max-width: 768px) {
+  .table-layout {
+    grid-template-columns: 0.5fr 3fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .table-layout {
+    grid-template-columns: 0.5fr 2fr 1fr 1fr;
+  }
+}
