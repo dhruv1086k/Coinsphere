@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CoinContext } from "../../Context/CoinContext";
-// import ChartItem from '../../components/chart/ChartItem'
+import ChartItem from "../../components/chart/ChartItem";
 
 export default function Coin() {
   const { coinId } = useParams();
@@ -24,11 +24,15 @@ export default function Coin() {
         options
       );
       const data = await response.json();
-      setHistoricalData(data);
+      setHistoricalData(data.prices);
     } catch (err) {
       console.log("failed to load historical data", err);
     }
   };
+
+  useEffect(() => {
+    fetchHistoricalData();
+  }, [currency, coinId]);
 
   useEffect(() => {
     if (Array.isArray(allCoin)) {
@@ -65,7 +69,7 @@ export default function Coin() {
           </h1>
         </div>
         <div className="w-1/3 max-lg:w-1/2 max-sm:w-full px-16 max-[500px]:px-6 rounded-lg">
-          {/* <ChartItem /> */}
+          <ChartItem historicalData={historicalData} />
         </div>
         <div className="mt-10 text-xl max-sm:px-10 max-sm:text-sm">
           <div className="flex justify-between items-center gap-24 my-3">
