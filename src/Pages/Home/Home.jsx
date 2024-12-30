@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { CoinContext } from "../../Context/CoinContext";
+import ContactForm from "../../components/contact/ContactForm";
 
 export default function Home() {
   const { allCoin, currency } = useContext(CoinContext);
@@ -91,6 +92,7 @@ export default function Home() {
             </a>
           ))}
         </div>
+        <ContactForm />
       </div>
     </>
   );
