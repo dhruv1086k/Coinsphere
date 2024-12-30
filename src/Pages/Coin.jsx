@@ -1,7 +1,7 @@
 export default function Coin() {
   return (
     <>
-      <div></div>
+      <div>Coin</div>
     </>
   );
 }
