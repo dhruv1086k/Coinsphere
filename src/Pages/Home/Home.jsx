@@ -9,7 +9,6 @@ export default function Home() {
   useEffect(() => {
     if (Array.isArray(allCoin)) {
       setDisplayCoin(allCoin);
-      console.log(displayCoin);
     } else {
       setDisplayCoin([]);
     }
