@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./Pages/Home";
-import Coin from "./Pages/Coin";
+import Home from "./Pages/Home/Home";
+import Coin from "./Pages/Coin/Coin";
+import Navbar from "./components/navbar/Navbar";
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
         <img src="/public/coin2.png" alt="" className="coin2 absolute" />
         <img src="/public/coin3.png" alt="" className="coin3 absolute" />
         <img src="/public/coin4.png" alt="" className="coin4 absolute" />
-
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/coin/:coinId" element={<Coin />} />
