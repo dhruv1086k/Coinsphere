@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Coin from "./Pages/Coin/Coin";
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 import "./index.css";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/coin/:coinId" element={<Coin />} />
         </Routes>
+        <Footer />
       </div>
     </>
   );
