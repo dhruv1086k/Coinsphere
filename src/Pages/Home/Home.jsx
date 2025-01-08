@@ -5,6 +5,7 @@ import ContactForm from "../../components/contact/ContactForm";
 export default function Home() {
   const { allCoin, currency } = useContext(CoinContext);
   const [displayCoin, setDisplayCoin] = useState([]);
+  const [searchedCoin, setSearchedCoin] = useState();
 
   useEffect(() => {
     if (Array.isArray(allCoin)) {
@@ -13,6 +14,10 @@ export default function Home() {
       setDisplayCoin([]);
     }
   }, [allCoin]);
+
+  const handleSearch = (e) => {
+    setSearchedCoin(e.target[0].value);
+  };
 
   return (
     <>
@@ -28,8 +33,9 @@ export default function Home() {
         <div className="w-full flex justify-center items-center mt-16">
           <div className="p-10 max-[520px]:p-5 rounded-lg bg-[rgba(255,255,255,.1)] z-10">
             <form
-              action=""
+              action={`/coin/${searchedCoin}`}
               className="flex gap-10 max-[520px]:gap-5 w-[30vw] max-xl:w-[50vw] max-sm:w-[80vw] max-[520px]:flex-col"
+              onSubmit={handleSearch}
             >
               <input
                 type="text"
